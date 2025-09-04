@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Level Password Generator</title>
+  <style>
+    body {
+      font-family:'Times New Roman', Times, serif ;
+      padding: 39px;
+      background-color: hsl(112, 89%, 50%);
+    }
+
+    input, button {
+      padding: 15px;
+      font-size: 23px;
+      margin-top: 12px;
+      width: 300px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: hsl(320, 100%, 51%);
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .result p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .pw-label {
+      font-weight: bold;
+    }
+
+    code {
+      background: #e0e0e0;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2><style color="red" ></style>Password Generator - IN ALL 4 LEVELS</h2>
+
+  <label for="username">Enter your name:</label><br>
+  <input type="text" id="username" placeholder="Your name"><br>
+
+  <button onclick="generatePasswords()">Generate Passwords</button>
+
+  <div class="result" id="output"></div>
+
+  <script>
+    function generateRandom(length, charset) {
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        result += charset[randomIndex];
+      }
+      return result;
+    }
+
+    function generatePasswords() {
+      const name = document.getElementById("username").value.trim();
+      const output = document.getElementById("output");
+
+      if (name === "") {
+        output.innerHTML = "<p>❗ Please enter your name.</p>";
+        return;
+      }
+
+      const easySet = "abcdefghijklmnopqrstuvwxyz";
+      const moderateSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const strongSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+      const veryStrongSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}<>?";
+
+      const easy = generateRandom(7, easySet);
+      const moderate = generateRandom(7, moderateSet);
+      const strong = generateRandom(7, strongSet);
+      const veryStrong = generateRandom(10, veryStrongSet);
+
+      output.innerHTML = `
+        <p>Hello <b>${name}</b>, here are your passwords:</p>
+        <p><span class="pw-label">🔹 Easy:</span> <code>${easy}</code></p>
+        <p><span class="pw-label">🔸 Moderate:</span> <code>${moderate}</code></p>
+        <p><span class="pw-label">🔶 Strong:</span> <code>${strong}</code></p>
+        <p><span class="pw-label">🔴 Very Strong:</span> <code>${veryStrong}</code></p>
+      `;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Cricket Players</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .search-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .search-box input {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .content {
+      padding: 15px;
+    }
+    .content h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .content p {
+      margin: 5px 0;
+      color: #555;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Top 10 Cricket Players</h1>
+
+  <!-- 🔍 Search Box -->
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search by name or country...">
+  </div>
+
+  <!-- Players Grid -->
+  <div class="grid" id="playerGrid">
+
+    <div class="card">
+      <img src="https://i.ibb.co/TP6W5Xw/kohli.jpg" alt="Virat Kohli">
+      <div class="content">
+        <h2>Virat Kohli</h2>
+        <p>Batsman | India</p>
+        <p>Runs: <span class="bold">12000</span></p>
+        <p>Wickets: <span class="bold">4</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/sHz5gSf/dhoni.jpg" alt="MS Dhoni">
+      <div class="content">
+        <h2>MS Dhoni</h2>
+        <p>Wicketkeeper-Batsman | India</p>
+        <p>Runs: <span class="bold">10500</span></p>
+        <p>Wickets: <span class="bold">1</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/x7nRg52/sachin.jpg" alt="Sachin Tendulkar">
+      <div class="content">
+        <h2>Sachin Tendulkar</h2>
+        <p>Batsman | India</p>
+        <p>Runs: <span class="bold">18426</span></p>
+        <p>Wickets: <span class="bold">154</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/QcJgkQp/rohit.jpg" alt="Rohit Sharma">
+      <div class="content">
+        <h2>Rohit Sharma</h2>
+        <p>Batsman | India</p>
+        <p>Runs: <span class="bold">9500</span></p>
+        <p>Wickets: <span class="bold">8</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/F6jr9w1/bumrah.jpg" alt="Jasprit Bumrah">
+      <div class="content">
+        <h2>Jasprit Bumrah</h2>
+        <p>Bowler | India</p>
+        <p>Runs: <span class="bold">200</span></p>
+        <p>Wickets: <span class="bold">150</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/6PNX5jm/hardik.jpg" alt="Hardik Pandya">
+      <div class="content">
+        <h2>Hardik Pandya</h2>
+        <p>All-Rounder | India</p>
+        <p>Runs: <span class="bold">1700</span></p>
+        <p>Wickets: <span class="bold">63</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/m9cYdr0/ab.jpg" alt="AB de Villiers">
+      <div class="content">
+        <h2>AB de Villiers</h2>
+        <p>Batsman | South Africa</p>
+        <p>Runs: <span class="bold">9577</span></p>
+        <p>Wickets: <span class="bold">2</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/wSgZ1hS/gayle.jpg" alt="Chris Gayle">
+      <div class="content">
+        <h2>Chris Gayle</h2>
+        <p>Batsman | West Indies</p>
+        <p>Runs: <span class="bold">10480</span></p>
+        <p>Wickets: <span class="bold">167</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/c1sGb4y/williamson.jpg" alt="Kane Williamson">
+      <div class="content">
+        <h2>Kane Williamson</h2>
+        <p>Batsman | New Zealand</p>
+        <p>Runs: <span class="bold">6550</span></p>
+        <p>Wickets: <span class="bold">37</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/6XQ2vY7/stokes.jpg" alt="Ben Stokes">
+      <div class="content">
+        <h2>Ben Stokes</h2>
+        <p>All-Rounder | England</p>
+        <p>Runs: <span class="bold">3000</span></p>
+        <p>Wickets: <span class="bold">70</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // 🔍 Filter Functionality
+    const searchInput = document.getElementById('search');
+    const cards = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('keyup', function() {
+      let filter = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        if (text.includes(filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <form>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label>
+</form>
+
+</body>
+</html>
+<iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" 
+        width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">
+Loading…
+</iframe>

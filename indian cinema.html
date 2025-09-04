@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CINEMA Quiz 🏏</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Start Screen -->
+    <div id="start-screen">
+      <h1>CINEMA QUIZ</h1>
+      <input type="text" id="username" placeholder="Enter SCHOOL" required />
+      <input type="tel" id="phone" placeholder="Enter DATE" required />
+      <button onclick="startQuiz()">START</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="hidden">
+      <h2 id="welcome"></h2>
+      <div id="question-box">
+        <p id="question"></p>
+        <div id="options"></div>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+      </div>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="hidden">
+      <h2>🎉 Quiz Completed! 
+        <a href="feedback.html">
+          <button>GIVE YOUR FEEDBACK(MUST BE GIVEN)</button>
+        </a>
+      </h2>
+      <p id="summary"></p>
+      <button onclick="location.reload()">Restart</button>
+    </div>
+  </div>
+
+  <script>
+    function startQuiz() {
+      const name = document.getElementById("username").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (name === "" || phone === "") {
+        alert("Please enter both SCHOOL and DATE.");
+        return;
+      }
+
+      // Show quiz
+      document.getElementById("start-screen").classList.add("hidden");
+      document.getElementById("quiz-screen").classList.remove("hidden");
+
+      // Display welcome message
+      document.getElementById("welcome").innerText = 
+        `Welcome ${name}! (Date: ${phone})`;
+    }
+  </script>
+
+  <!-- ✅ Attach your external JS file here -->
+  <script src="na questions.js"></script>
+</body>
+</html>

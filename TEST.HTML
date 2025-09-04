@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PERSONAL DETAILS</title>
+</head>
+<body>
+    <link rel="stylesheet" href="STYLING.ccs">
+    <h2>WELCOME TO THE CINEMA!!<p style="font-size:50px">&#127909;</p></h2>
+
+  <style>
+    .button
+    {
+       background-color: #0415aa;
+              border: black;
+  color: rgb(252, 252, 252);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Anton', sans-serif;
+;
+}
+    
+    #p1{
+        text-align:center;
+        color:hsl(251, 86%, 49%);
+        font-family:"Brush Script MT", "cursive";
+    }
+    #p2{
+        font-family:"Copperplate, Papyrus, fantas";
+    }
+  </style>
+  <p id="p2"><b>ANSWER THE FOLLOWING QUESTIONS:</b></p>
+  <p id="p1">1.MENTION YOUR HOBBIES:</p1>
+  <form>
+  <input type="checkbox" id="vehicle1" name="1" value="CINEMA">
+  <label for="1"> CINEMA</label><br>
+  <input type="checkbox" id="vehicle2" name="2" value="SPORTS">
+  <label for="v2"> SPORTS</label><br>
+  <input type="checkbox" id="vehicle3" name="3" value="MUSIC">
+  <label for="vehicle3"> MUSIC</label>
+</form>
+  <form>
+    <p id="p1">2.WHICH FILM INDUSTRY MOVIES DO U WATCH THE MOST?</p>
+  <input type="checkbox" id="vehicle1" name="1" value="CINEMA">
+  <label for="1"> BFI(hin)</label><br>
+  <input type="checkbox" id="vehicle2" name="2" value="SPORTS">
+  <label for="v2"> TFI(tel)</label><br>
+  <input type="checkbox" id="vehicle3" name="3" value="MUSIC">
+  <label for="vehicle3"> KFI(tam)</label>
+  <input type="checkbox" id="vehicle3" name="3" value="MUSIC">
+  <label for="vehicle3"> SFI(kan)</label>
+</form>
+<form>
+<p id="p1">3.NACHINA STAR DIRECTOR EVARU?</p>
+  <input type="checkbox" id="vehicle1" name="1" value="CINEMA">
+  <label for="1"> SS RAJAMOULI</label><br>
+  <input type="checkbox" id="vehicle2" name="2" value="SPORTS">
+  <label for="v2"> SANDEEP REDDY VANGA</label><br>
+  <input type="checkbox" id="vehicle3" name="3" value="MUSIC">
+  <label for="vehicle3"> PRASHANT NEEL</label>
+  <input type="checkbox" id="vehicle3" name="3" value="MUSIC">
+  <label for="vehicle3"> ANUDEEP KV</label>
+  </form>
+  <form>
+<p id="p1">4.EE WEBSITE ENDUKU OPEN CHESAV??</p>
+  <input type="checkbox" id="vehicle1" name="1" value="CINEMA">
+  <label for="1"> PANI LEKA</label><br>
+  <input type="checkbox" id="vehicle2" name="2" value="SPORTS">
+  <label for="v2">RECORDS KOSAM..</label><br>
+  <input type="checkbox" id="vehicle3" name="3" value="MUSIC">
+  <label for="vehicle3"> TWITTER KOSAM</label>
+  <input type="checkbox" id="vehicle3" name="3" value="MUSIC">
+  <label for="vehicle3">MOVIES DOWNLOAD CHEYADANIKI</label>
+  </form>
+    <h2>ENTER THE REQUIRED THE DETAILS</h2>
+  <form id="myForm">
+    Name: <input type="text" id="name"><br><br>
+    Email: <input type="email" id="email"><br><br>
+    Message: <textarea id="message"></textarea><br><br>
+    <button class="button1" onclick="sendData()">SUBMIT TO SERVER</button>
+  </form>
+
+  <script>
+    function sendData() {
+      fetch("https://script.google.com/macros/s/AKfycbzzMb4p4S4IPTovT9trn01PoREoszRJVUZbxb4XN4F1B2_Bq9ozAtslpvAGL4xbrXdQPw/exec", {
+        method: "POST",
+        body: JSON.stringify({
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value
+        })
+      })
+      .then(res => alert("Data Saved to Google Sheet!"))
+      .catch(err => alert("Error: " + err));
+  
+  </script>
+  <style>
+  .btn1 {
+    text-align: center;
+  display:inline-flex;
+  padding: 1px 1px;
+  background: #ff0037;
+  color: rgb(255, 255, 255);
+  text-decoration:solid;
+  border-radius: 100px;
+}
+.btn1.hover {
+  background: #00b36e;
+}
+
+</style>
+
+
+  
+
+<video width="350"height="250">
+  <source src="Salaar1.mp4" type="video/mp4">
+  </video>
+  <a href="CINEMA.html" class="btn1"><button class="btn1"><b>CLICK HERE TO ENTER TO THE SERVER OF THE CINEMA</b></button></a>
+</body>
+</html>

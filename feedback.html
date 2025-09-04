@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rate Us</title>
+  <style>
+    body {
+      background: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #00ffc3;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffc3;
+      width: 300px;
+    }
+
+    label {
+      font-size: 18px;
+    }
+
+    select, textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #00ffc3;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00d1a5;
+    }
+
+    /* Popup Modal */
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px #00ffc3;
+      max-width: 350px;
+    }
+
+    .popup-content img {
+      width: 200px;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 15px #00ffc3;
+    }
+
+    .close-btn {
+      margin-top: 15px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #00ffc3;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Rate Our Service</h1>
+
+  <form id="ratingForm">
+    <label for="rating">RATING IVVANDI SAAR :</label>
+    <select name="Rating" id="rating" required>
+      <option value="">-- Select --</option>
+      <option value="★☆☆☆☆">1 Star</option>
+      <option value="★★☆☆☆">2 Stars</option>
+      <option value="★★★☆☆">3 Stars</option>
+      <option value="★★★★☆">4 Stars</option>
+      <option value="★★★★★">5 Stars</option>
+    </select>
+
+    <label for="message">Additional feedback:</label>
+    <textarea name="Feedback" id="message" rows="4" placeholder="Write your comments here...(10 LINES MINIMUM)" required></textarea>
+
+    <input type="email" name="Email" id="email" placeholder="Your Email (COMPULSORY)" required />
+
+    <button type="submit">Send Rating</button>
+  </form>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>✅ Thank you for your feedback!</h2>
+      <p>Your response has been submitted successfully.</p>
+      <img src="THE END.jpg" alt="Thank You">
+      <br>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzvfQFFkcyyrdmjVNAnsSKzE6L19szI7z2plxfWGQTBUBvnOid5vJshSi7l2xuVkQxRMg/exec";
+    const form = document.getElementById("ratingForm");
+    const popup = document.getElementById("popup");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form)
+      })
+      .then(response => {
+        form.reset();
+        popup.style.display = "flex"; // show popup
+      })
+      .catch(error => {
+        alert("❌ Submission failed. Try again!");
+      });
+    });
+
+    function closePopup() {
+      popup.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
