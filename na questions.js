@@ -1,6 +1,6 @@
 const questions = [
   {
-    question: "HOW MANY TYPES OF HEART ATTACKS R THERE?(10TH LEVEL)",
+    question: "HOW MANY TYPES OF HEART ATTACKS R THERE?(10 LEVEL)",
     options: ["3", "1", "2", "4"],
     answer: "3",
   },
@@ -248,3 +248,4 @@ function showCorrectOnTimeout() {
   const nextBtn = document.getElementById("next-btn");
   if (nextBtn) nextBtn.style.display = "block";
 }
+
